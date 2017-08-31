@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-warrior-detail',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
     '../../../node_modules/deathmatch-components/dist/components/warriorDetail/warriorDetail.css'
   ]
 })
-export class WarriorDetailComponent {}
+export class WarriorDetailComponent {
+  @Input() warrior: object;
+}

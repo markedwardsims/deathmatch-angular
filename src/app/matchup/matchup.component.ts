@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DeathmatchApiService } from '../deathmatch-api.service';
 
 @Component({
   selector: 'app-matchup',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
     './matchup.component.scss'
   ]
 })
-export class MatchupComponent {}
+export class MatchupComponent implements OnInit {
+  opponent1: object;
+  opponent2: object;
+
+  constructor(private _deathmatchApiService: DeathmatchApiService) {}
+
+  ngOnInit() {
+    const warriors = this._deathmatchApiService.getAllWarriors();
+    this.opponent1 = warriors[0];
+    this.opponent2 = warriors[1];
+  }
+
+}
