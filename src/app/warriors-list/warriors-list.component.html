@@ -1,11 +1,8 @@
 <section class="dm-warriors dm-sidebar__section">
   <h3 class="dm-title dm-title--medium">Warriors</h3>
   <ul class="dm-warriors__list dm-inline-list">
-    <li class="dm-inline-list__item">
-      <app-warrior [isSmall]="true"></app-warrior>
-      <app-warrior [isSmall]="true"></app-warrior>
-      <app-warrior [isSmall]="true"></app-warrior>
-      <app-warrior [isSmall]="true"></app-warrior>
+    <li *ngFor="let warrior of warriors" class="dm-inline-list__item">
+      <app-warrior [isSmall]="true" [image]=warrior.image></app-warrior>
     </li>
   </ul>
 </section>

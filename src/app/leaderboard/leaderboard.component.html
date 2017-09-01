@@ -6,17 +6,9 @@
   </tr>
   </thead>
   <tbody>
-  <tr class="dm-table__row">
-    <td class="dm-table__cell">Nitro</td>
-    <td class="dm-table__cell dm-text-right">20</td>
-  </tr>
-  <tr class="dm-table__row">
-    <td class="dm-table__cell">T2000</td>
-    <td class="dm-table__cell dm-text-right">17</td>
-  </tr>
-  <tr class="dm-table__row">
-    <td class="dm-table__cell">Rocky Balboa</td>
-    <td class="dm-table__cell dm-text-right">27</td>
-  </tr>
+    <tr *ngFor="let warrior of warriors" class="dm-table__row">
+      <td class="dm-table__cell">{{ warrior.name }}</td>
+      <td class="dm-table__cell dm-text-right">{{ warrior.wins }}</td>
+    </tr>
   </tbody>
 </table>

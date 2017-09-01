@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { DeathmatchApiService } from './deathmatch-api.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
@@ -26,7 +27,7 @@ import { MatchupComponent } from './matchup/matchup.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [DeathmatchApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
