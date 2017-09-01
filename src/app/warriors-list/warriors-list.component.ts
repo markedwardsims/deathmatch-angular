@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { DeathmatchApiService } from '../deathmatch-api.service';
+import { WarriorModel } from '../warrior.model';
 
 @Component({
   selector: 'app-warriors-list',
@@ -9,7 +10,7 @@ import { DeathmatchApiService } from '../deathmatch-api.service';
   ]
 })
 export class WarriorsListComponent implements OnInit {
-  warriors: any[] = [];
+  warriors: WarriorModel[] = [];
 
   constructor(private _deathmatchApiService: DeathmatchApiService) {}
 

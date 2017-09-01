@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {WarriorModel} from '../warrior.model';
 
 @Component({
   selector: 'app-warrior-detail',
@@ -8,5 +9,5 @@ import {Component, Input} from '@angular/core';
   ]
 })
 export class WarriorDetailComponent {
-  @Input() warrior: object;
+  @Input() warrior: WarriorModel;
 }
