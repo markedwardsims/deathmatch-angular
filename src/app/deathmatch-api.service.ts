@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { WarriorModel } from './warrior.model';
+import { WarriorInterface } from './warrior.interface';
 
-const warriors = [
-  new WarriorModel(1, 'Chuck Norris', 0, '/assets/images/chuck-norris.jpg'),
-  new WarriorModel(2, 'Nitro',        0, '/assets/images/nitro.jpg'),
-  new WarriorModel(3, 'Darth Vader',  0, '/assets/images/darth-vader.jpg'),
-  new WarriorModel(4, 'T2000',        0, '/assets/images/t2000.jpg'),
-  new WarriorModel(5, 'Mr. T',        0, '/assets/images/mr-t.jpg')
+const warriors: WarriorInterface[] = [
+  { id: 1, name: 'Chuck Norris',  wins: 0, image: '/assets/images/chuck-norris.jpg' },
+  { id: 2, name: 'Nitro',         wins: 0, image: '/assets/images/nitro.jpg' },
+  { id: 3, name: 'Darth Vader',   wins: 0, image: '/assets/images/darth-vader.jpg' },
+  { id: 4, name: 'T2000',         wins: 0, image: '/assets/images/t2000.jpg' },
+  { id: 5, name: 'Mr. Twins: ',   wins: 0, image: '/assets/images/mr-t.jpg' }
 ];
 
 @Injectable()
