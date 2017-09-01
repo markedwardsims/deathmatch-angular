@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class WarriorComponent implements OnInit {
   @Input() isSmall: boolean;
-  @Input() warrior: object;
+  @Input() image: string;
   cssClass: string;
 
   ngOnInit() {
