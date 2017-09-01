@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: [
-    '../../../../node_modules/deathmatch-components/dist/components/header/header.css',
-    '../../../../node_modules/deathmatch-components/dist/components/logo/logo.css'
+    '../../../node_modules/deathmatch-components/dist/components/header/header.css',
+    '../../../node_modules/deathmatch-components/dist/components/logo/logo.css'
   ]
 })
 export class HeaderComponent {}

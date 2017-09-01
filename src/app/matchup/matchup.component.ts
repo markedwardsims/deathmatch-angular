@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DeathmatchApiService } from '../../services/deathmatch-api.service';
+import { DeathmatchApiService } from '../deathmatch-api.service';
 
 @Component({
   selector: 'app-matchup',

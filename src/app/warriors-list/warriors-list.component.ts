@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import { DeathmatchApiService } from '../../services/deathmatch-api.service';
-import { WarriorModel } from '../../models/warrior.model';
+import { DeathmatchApiService } from '../deathmatch-api.service';
+import { WarriorModel } from '../warrior.model';
 
 @Component({
   selector: 'app-warriors-list',
   templateUrl: './warriors-list.component.html',
   styleUrls: [
-    '../../../../node_modules/deathmatch-components/dist/components/inlineList/inlineList.css'
+    '../../../node_modules/deathmatch-components/dist/components/inlineList/inlineList.css'
   ]
 })
 export class WarriorsListComponent implements OnInit {
