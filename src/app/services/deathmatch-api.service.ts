@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { WarriorModel } from './warrior.model';
+import { WarriorModel } from '../models/warrior.model';
 
 const warriors = [
   new WarriorModel(1, 'Chuck Norris', 0, '/assets/images/chuck-norris.jpg'),
