@@ -16,4 +16,8 @@ export class DeathmatchApiService {
     return warriors;
   }
 
+  incrementWarrior(warrior: WarriorInterface) {
+    warrior.wins++;
+  }
+
 }

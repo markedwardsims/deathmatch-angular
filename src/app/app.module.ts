@@ -11,6 +11,7 @@ import { NotificationListComponent } from './notification-list/notification-list
 import { NotificationComponent } from './notification/notification.component';
 import { WarriorDetailComponent } from './warrior-detail/warrior-detail.component';
 import { MatchupComponent } from './matchup/matchup.component';
+import { ArraySortPipe } from './array-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatchupComponent } from './matchup/matchup.component';
     NotificationListComponent,
     NotificationComponent,
     WarriorDetailComponent,
-    MatchupComponent
+    MatchupComponent,
+    ArraySortPipe
   ],
   imports: [
     BrowserModule

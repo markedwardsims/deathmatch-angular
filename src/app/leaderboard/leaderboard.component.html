@@ -6,7 +6,7 @@
   </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let warrior of warriors" class="dm-table__row">
+    <tr *ngFor="let warrior of warriors | arraySort: 'wins' : true" class="dm-table__row">
       <td class="dm-table__cell">{{ warrior.name }}</td>
       <td class="dm-table__cell dm-text-right">{{ warrior.wins }}</td>
     </tr>
