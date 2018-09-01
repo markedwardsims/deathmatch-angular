@@ -18,8 +18,9 @@
     "module": "es2015",
     "baseUrl": "./",
     "paths": {
-//      "@core/*": ["src/app/core/*"],
-//      "@state/*": ["src/app/state/*"],
+      "@interfaces/*": ["src/app/interfaces/*"],
+      "@components/*": ["src/app/components/*"],
+      "@pipes/*": ["src/app/pipes/*"]
     }
   }
 }

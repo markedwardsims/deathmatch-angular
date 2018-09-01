@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {WarriorInterface} from '../warrior.interface';
+import {WarriorInterface} from '@interfaces/warrior.interface';
 
 @Component({
   selector: 'app-warriors-list',
   templateUrl: './warriors-list.component.html',
   styleUrls: [
-    '../../../node_modules/deathmatch-components/dist/components/inlineList/inlineList.css'
+    '../../../../node_modules/deathmatch-components/dist/components/inlineList/inlineList.css'
   ]
 })
 export class WarriorsListComponent implements OnInit {

@@ -23,6 +23,11 @@
             "styles": [
               "node_modules/deathmatch-components/dist/common/deathmatch.common.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/deathmatch-components/dist"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

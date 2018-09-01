@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {WarriorInterface} from '../warrior.interface';
+import {WarriorInterface} from '@interfaces/warrior.interface';
 
 @Component({
   selector: 'app-matchup',
