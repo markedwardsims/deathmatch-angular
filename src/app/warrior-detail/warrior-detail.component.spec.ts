@@ -1,22 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {WarriorDetailComponent} from './warrior-detail.component';
 
-import { WarriorDetailComponent } from './warrior-detail.component';
+let component: WarriorDetailComponent;
 
 describe('WarriorDetailComponent', () => {
-  let component: WarriorDetailComponent;
-  let fixture: ComponentFixture<WarriorDetailComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ WarriorDetailComponent ]
-    })
-    .compileComponents();
-  }));
-
   beforeEach(() => {
-    fixture = TestBed.createComponent(WarriorDetailComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new WarriorDetailComponent();
   });
 
   it('should be created', () => {

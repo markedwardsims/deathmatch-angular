@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DeathmatchApiService } from '../deathmatch-api.service';
+import {Component, OnInit} from '@angular/core';
 import {WarriorInterface} from '../warrior.interface';
 
 @Component({
@@ -13,9 +12,9 @@ import {WarriorInterface} from '../warrior.interface';
 export class LeaderboardComponent implements OnInit {
   warriors: WarriorInterface[] = [];
 
-  constructor(private _deathmatchApiService: DeathmatchApiService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.warriors = this._deathmatchApiService.getAllWarriors();
+    this.warriors = [];
   }
 }

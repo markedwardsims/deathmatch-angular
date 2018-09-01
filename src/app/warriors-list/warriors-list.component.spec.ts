@@ -1,22 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {WarriorsListComponent} from './warriors-list.component';
 
-import { WarriorsListComponent } from './warriors-list.component';
+let component: WarriorsListComponent;
 
 describe('WarriorsListComponent', () => {
-  let component: WarriorsListComponent;
-  let fixture: ComponentFixture<WarriorsListComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ WarriorsListComponent ]
-    })
-    .compileComponents();
-  }));
-
   beforeEach(() => {
-    fixture = TestBed.createComponent(WarriorsListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new WarriorsListComponent();
   });
 
   it('should be created', () => {

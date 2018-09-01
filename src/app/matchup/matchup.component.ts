@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DeathmatchApiService } from '../deathmatch-api.service';
-import { WarriorInterface } from '../warrior.interface';
+import {Component, OnInit} from '@angular/core';
+import {WarriorInterface} from '../warrior.interface';
 
 @Component({
   selector: 'app-matchup',
@@ -13,16 +12,16 @@ export class MatchupComponent implements OnInit {
   opponent1: object;
   opponent2: object;
 
-  constructor(private _deathmatchApiService: DeathmatchApiService) {}
+  constructor() {}
 
   ngOnInit() {
-    const warriors = this._deathmatchApiService.getAllWarriors();
-    this.opponent1 = warriors[0];
-    this.opponent2 = warriors[1];
+    const warriors = [];
+    this.opponent1 = null; // warriors[0];
+    this.opponent2 = null; //warriors[1];
   }
 
   selectOpponent(warrior: WarriorInterface) {
-    this._deathmatchApiService.incrementWarrior(warrior);
+    // this._deathmatchApiService.incrementWarrior(warrior);
   }
 
 }
