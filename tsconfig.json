@@ -20,7 +20,9 @@
     "paths": {
       "@interfaces/*": ["src/app/interfaces/*"],
       "@components/*": ["src/app/components/*"],
-      "@pipes/*": ["src/app/pipes/*"]
+      "@pipes/*": ["src/app/pipes/*"],
+      "@actions/*": ["src/app/actions/*"],
+      "@reducers/*": ["src/app/reducers/*"]
     }
   }
 }

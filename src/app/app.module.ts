@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import {StoreModule} from '@ngrx/store';
+import {reducer} from '@reducers/warriors.reducer';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from '@components/header/header.component';
 import {LeaderboardComponent} from '@components/leaderboard/leaderboard.component';
@@ -26,7 +27,10 @@ import {ArraySortPipe} from '@pipes/array-sort/array-sort.pipe';
     ArraySortPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({
+      warriors: reducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

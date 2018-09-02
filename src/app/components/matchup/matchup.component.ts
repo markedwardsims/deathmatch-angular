@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {WarriorInterface} from '@interfaces/warrior.interface';
+import {Warrior} from '@interfaces/warrior';
 
 @Component({
   selector: 'app-matchup',
@@ -20,7 +20,7 @@ export class MatchupComponent implements OnInit {
     this.opponent2 = null; //warriors[1];
   }
 
-  selectOpponent(warrior: WarriorInterface) {
+  selectOpponent(warrior: Warrior) {
     // this._deathmatchApiService.incrementWarrior(warrior);
   }
 

@@ -1,4 +1,4 @@
-export interface WarriorInterface {
+export interface Warrior {
   id: number;
   name: string;
   wins: number;

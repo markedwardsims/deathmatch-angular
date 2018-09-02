@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {WarriorInterface} from '@interfaces/warrior.interface';
+import {Warrior} from '@interfaces/warrior';
+import {select, Store} from '@ngrx/store';
+import {AppState} from '../../app.state';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-leaderboard',
@@ -10,11 +13,12 @@ import {WarriorInterface} from '@interfaces/warrior.interface';
   ]
 })
 export class LeaderboardComponent implements OnInit {
-  warriors: WarriorInterface[] = [];
+  warriors: Observable<Warrior[]>;
 
-  constructor() {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
-    this.warriors = [];
+    this.warriors = this.store.pipe(select((state: any) => state.warriors.allWarriors));
   }
+
 }
