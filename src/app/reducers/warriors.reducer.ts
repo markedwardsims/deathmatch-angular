@@ -1,5 +1,6 @@
 import * as WarriorsActions from '@actions/warriors.actions';
 import {Warrior} from '@interfaces/warrior';
+import sampleSize from 'lodash-es/sampleSize';
 
 export interface WarriorsState {
   allWarriors: Warrior[];
@@ -7,7 +8,7 @@ export interface WarriorsState {
   opponent2: Warrior;
 }
 
-const initialState: WarriorsState = {
+export const initialState: WarriorsState = {
   allWarriors : [
     { id: 1, name: 'Chuck Norris',  wins: 0, image: '/assets/images/chuck-norris.jpg' },
     { id: 2, name: 'Nitro',         wins: 0, image: '/assets/images/nitro.jpg' },
@@ -23,7 +24,10 @@ export function reducer(state: WarriorsState = initialState, action: WarriorsAct
 
   switch (action.type) {
     case WarriorsActions.SET_ALL_WARRIORS:
-      return {...state};
+      return Object.assign({}, state, {allWarriors: action.payload});
+    case WarriorsActions.SET_OPPONENTS:
+      const randomWarriors = sampleSize(state.allWarriors, 2);
+      return Object.assign({}, state, { opponent1: randomWarriors[0], opponent2: randomWarriors[1] });
     default:
       return state;
   }

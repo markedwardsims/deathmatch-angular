@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Warrior} from '@interfaces/warrior';
+import {select, Store} from '@ngrx/store';
+import {AppState} from '../../app.state';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-matchup',
@@ -9,15 +12,14 @@ import {Warrior} from '@interfaces/warrior';
   ]
 })
 export class MatchupComponent implements OnInit {
-  opponent1: object;
-  opponent2: object;
+  opponent1: Observable<Warrior>;
+  opponent2: Observable<Warrior>;
 
-  constructor() {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
-    const warriors = [];
-    this.opponent1 = null; // warriors[0];
-    this.opponent2 = null; //warriors[1];
+    this.opponent1 = this.store.pipe(select((state: any) => state.warriors.opponent1));
+    this.opponent2 = this.store.pipe(select((state: any) => state.warriors.opponent2));
   }
 
   selectOpponent(warrior: Warrior) {
