@@ -1,6 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -11,6 +14,11 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "types": [
+      "node",
+      "lodash-es",
+      "jest"
+    ],
     "lib": [
       "es2017",
       "dom"
@@ -20,7 +28,9 @@
     "paths": {
       "@interfaces/*": ["src/app/interfaces/*"],
       "@components/*": ["src/app/components/*"],
-      "@pipes/*": ["src/app/pipes/*"]
+      "@pipes/*": ["src/app/pipes/*"],
+      "@actions/*": ["src/app/actions/*"],
+      "@reducers/*": ["src/app/reducers/*"]
     }
   }
 }

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {AppState} from './app.state';
+import * as WarriorsActions from '@actions/warriors.actions';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +11,10 @@ import { Component } from '@angular/core';
   ],
   providers: []
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  constructor(private store: Store<AppState>) {}
+
+  ngOnInit() {
+    this.store.dispatch(new WarriorsActions.SetOpponents());
+  }
+}
