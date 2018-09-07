@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AppState} from './app.state';
-import * as WarriorsActions from '@actions/warriors.actions';
+import {WebsocketService} from '@services/websocket/websocket.service';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +12,9 @@ import * as WarriorsActions from '@actions/warriors.actions';
   providers: []
 })
 export class AppComponent implements OnInit {
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>, private websocketService: WebsocketService) {}
 
   ngOnInit() {
-    this.store.dispatch(new WarriorsActions.SetOpponents());
+    this.websocketService.openConnection();
   }
 }

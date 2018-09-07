@@ -1,7 +1,7 @@
-<figure class="dm-warrior-detail">
-  <app-warrior [image]=warrior?.image></app-warrior>
+<figure *ngIf="warrior" class="dm-warrior-detail">
+  <app-warrior [image]="warrior.image"></app-warrior>
   <figcaption class="dm-warrior-detail__caption">
-    <div class="dm-warrior-detail__name">Name</div>
-    <div class="dm-warrior-detail__wins">999</div>
+    <div class="dm-warrior-detail__name">{{warrior.name}}</div>
+    <div class="dm-warrior-detail__wins">{{warrior.wins}}</div>
   </figcaption>
 </figure>

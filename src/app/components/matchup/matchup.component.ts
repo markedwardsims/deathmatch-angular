@@ -3,6 +3,7 @@ import {Warrior} from '@interfaces/warrior';
 import {select, Store} from '@ngrx/store';
 import {AppState} from '../../app.state';
 import {Observable} from 'rxjs';
+import * as WarriorsActions from '@actions/warriors.actions';
 
 @Component({
   selector: 'app-matchup',
@@ -22,8 +23,8 @@ export class MatchupComponent implements OnInit {
     this.opponent2 = this.store.pipe(select((state: any) => state.warriors.opponent2));
   }
 
-  selectOpponent(warrior: Warrior) {
-    // this._deathmatchApiService.incrementWarrior(warrior);
+  selectOpponent(id: number) {
+    this.store.dispatch(new WarriorsActions.SelectOpponent(id));
   }
 
 }
