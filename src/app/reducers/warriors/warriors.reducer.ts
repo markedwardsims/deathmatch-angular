@@ -1,7 +1,7 @@
-import * as WarriorsActions from '@actions/warriors.actions';
-import {Warrior} from '@interfaces/warrior';
+import * as WarriorsActions from '../../actions/warriors.actions';
+import {Warrior} from '../../interfaces/warrior';
 import sampleSize from 'lodash-es/sampleSize';
-import {PayloadAction} from '@actions/warriors.actions';
+import {PayloadAction} from '../../actions/warriors.actions';
 
 export interface WarriorsState {
   allWarriors: Warrior[];
