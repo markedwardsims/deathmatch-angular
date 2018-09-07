@@ -30,7 +30,9 @@
       "@components/*": ["src/app/components/*"],
       "@pipes/*": ["src/app/pipes/*"],
       "@actions/*": ["src/app/actions/*"],
-      "@reducers/*": ["src/app/reducers/*"]
+      "@reducers/*": ["src/app/reducers/*"],
+      "@services/*": ["src/app/services/*"],
+      "@effects/*": ["src/app/effects/*"]
     }
   }
 }

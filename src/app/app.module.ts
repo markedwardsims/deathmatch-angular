@@ -12,6 +12,10 @@ import {NotificationComponent} from '@components/notification/notification.compo
 import {WarriorDetailComponent} from '@components/warrior-detail/warrior-detail.component';
 import {MatchupComponent} from '@components/matchup/matchup.component';
 import {ArraySortPipe} from '@pipes/array-sort/array-sort.pipe';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment';
+import {EffectsModule} from '@ngrx/effects';
+import {WarriorsEffects} from '@effects/warriors/warriors.effects';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,12 @@ import {ArraySortPipe} from '@pipes/array-sort/array-sort.pipe';
     BrowserModule,
     StoreModule.forRoot({
       warriors: reducer
-    })
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    EffectsModule.forRoot([WarriorsEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
