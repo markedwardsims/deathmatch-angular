@@ -1,4 +1,4 @@
-import {reducer, initialState} from '@reducers/warriors.reducer';
+import {reducer, initialState} from '@reducers/warriors/warriors.reducer';
 import * as WarriorsActions from '@actions/warriors.actions';
 
 // mock the lodash sampleSize method so we can control what it returns
@@ -35,6 +35,20 @@ describe('Warriors Reducer', () => {
 
     expect(state.opponent1).toEqual(warrior2);
     expect(state.opponent2).toEqual(warrior1);
+  });
+
+  it('should return the existing state with SELECT_OPPONENT', () => {
+    const type = WarriorsActions.SELECT_OPPONENT;
+    const warrior1 = { id: 1, name: 'foo',  wins: 0, image: 'bar' };
+    const warrior2 = { id: 2, name: 'baz',  wins: 0, image: 'bah' };
+    const previousState = {
+      allWarriors: [warrior1, warrior2],
+      opponent1: null,
+      opponent2: null
+    };
+    const state = reducer(previousState, {type});
+
+    expect(state).toEqual(previousState);
   });
 
 });

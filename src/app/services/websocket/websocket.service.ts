@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
-import io from 'socket.io-client';
-import {Socket} from 'socket.io';
+import {Injectable} from '@angular/core';
+import io, {Socket} from 'socket.io-client';
 import {Warrior} from '@interfaces/warrior';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../app.state';
