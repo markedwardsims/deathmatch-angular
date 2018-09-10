@@ -4,8 +4,8 @@ import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
 import {mapTo, switchMap, tap, map} from 'rxjs/operators';
 import {WebsocketService} from '@services/websocket/websocket.service';
-import * as WarriorsActions from '@actions/warriors.actions';
-import {PayloadAction} from '@actions/warriors.actions';
+import * as WarriorsActions from '@actions/warriors/warriors.actions';
+import {PayloadAction} from '@actions/warriors/warriors.actions';
 
 @Injectable()
 export class WarriorsEffects {

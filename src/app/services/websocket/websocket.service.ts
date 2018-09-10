@@ -3,7 +3,7 @@ import io, {Socket} from 'socket.io-client';
 import {Warrior} from '@interfaces/warrior';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../app.state';
-import * as WarriorsActions from '@actions/warriors.actions';
+import * as WarriorsActions from '@actions/warriors/warriors.actions';
 
 @Injectable({
   providedIn: 'root'
