@@ -1,5 +1,5 @@
 import {reducer, initialState} from '@reducers/warriors/warriors.reducer';
-import * as WarriorsActions from '@actions/warriors.actions';
+import * as WarriorsActions from '@actions/warriors/warriors.actions';
 
 // mock the lodash sampleSize method so we can control what it returns
 jest.mock('lodash-es/sampleSize', () => {

@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 import {AppState} from '../../app.state';
 import {anything, instance, mock, verify, when} from 'ts-mockito';
 import {Observable} from 'rxjs';
-import * as WarriorsActions from '@actions/warriors.actions';
+import * as WarriorsActions from '@actions/warriors/warriors.actions';
 
 let component: MatchupComponent;
 let store: Store<AppState>;

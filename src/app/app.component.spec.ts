@@ -1,5 +1,5 @@
 import {AppComponent} from './app.component';
-import {deepEqual, instance, mock, verify} from 'ts-mockito';
+import {deepEqual, instance, mock, resetCalls, verify} from 'ts-mockito';
 import {Store} from '@ngrx/store';
 import {AppState} from './app.state';
 import {WebsocketService} from './services/websocket/websocket.service';
@@ -35,6 +35,10 @@ describe('AppComponent', () => {
     });
     component.ngOnInit();
     verify(mockStore.dispatch(deepEqual(action))).once();
+  });
+
+  afterEach(() => {
+    resetCalls(mockStore);
   });
 
 });
