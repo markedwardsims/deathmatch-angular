@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.websocketService.openConnection();
+
     this.store.dispatch(new NotificationsActions.AddNotification({
       type: 'warning',
       message: 'Welcome to Deathmatch!'

@@ -24,4 +24,13 @@ describe('Notifications Reducer', () => {
     expect(state).toEqual([notification3, notification1, notification2]);
   });
 
+  it('should remove a notification with REMOVE_NOTIFICATION', () => {
+    const type = NotificationsActions.REMOVE_NOTIFICATION;
+    const notification1 = {type: 'foo', message: 'bar'};
+    const notification2 = {type: 'baz', message: 'bash'};
+    const notification3 = {type: 'bah', message: 'bim'};
+    const state = reducer([notification1, notification2, notification3], {type, payload: 1});
+    expect(state).toEqual([notification1, notification3]);
+  });
+
 });

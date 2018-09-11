@@ -1,6 +1,7 @@
 <div class="dm-notification-list dm-notification-list--fixed">
-  <app-notification *ngFor="let notification of notifications | async"
+  <app-notification *ngFor="let notification of notifications | async; let i = index"
     [type]="notification.type"
     [message]="notification.message"
+    (click)="removeNotification(i)"
   ></app-notification>
 </div>

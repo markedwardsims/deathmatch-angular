@@ -3,8 +3,7 @@ import {select, Store} from '@ngrx/store';
 import {AppState} from '../../app.state';
 import {Observable} from 'rxjs';
 import {Notification} from '@interfaces/notification';
-import {LeaderboardComponent} from '@components/leaderboard/leaderboard.component';
-import {anything, instance, mock, when} from 'ts-mockito';
+import * as NotificationsActions from '@actions/notifications/notifications.actions';
 
 @Component({
   selector: 'app-notification-list',
@@ -20,6 +19,10 @@ export class NotificationListComponent implements OnInit {
 
   ngOnInit() {
     this.notifications = this.store.pipe(select((state: any) => state.notifications));
+  }
+
+  removeNotification(index: number) {
+    this.store.dispatch(new NotificationsActions.RemoveNotification(index));
   }
 
 }

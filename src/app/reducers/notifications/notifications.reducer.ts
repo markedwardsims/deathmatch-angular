@@ -11,6 +11,11 @@ export function reducer(state: NotificationsState = initialState, action: Payloa
   switch (action.type) {
     case NotificationsActions.ADD_NOTIFICATION:
       return [action.payload].concat(state);
+    case NotificationsActions.REMOVE_NOTIFICATION:
+      return [
+        ...state.slice(0, action.payload),
+        ...state.slice(action.payload + 1)
+      ];
     default:
       return state;
   }

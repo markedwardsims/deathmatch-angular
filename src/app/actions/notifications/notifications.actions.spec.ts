@@ -13,4 +13,11 @@ describe('Notification Actions', () => {
     });
   });
 
+  it('should create the RemoveNotification action', () => {
+    expect(new NotificationsActions.RemoveNotification(99)).toEqual({
+      type: NotificationsActions.REMOVE_NOTIFICATION,
+      payload: 99
+    });
+  });
+
 });
