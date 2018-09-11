@@ -51,9 +51,9 @@
     "node-sass": "^4.5.3",
     "protractor": "~5.1.2",
     "ts-jest": "22.4.6",
+    "ts-lint": "^4.5.1",
     "ts-mockito": "^2.3.1",
     "ts-node": "~3.2.0",
-    "tslint": "~5.3.2",
     "typescript": "~2.9.2"
   }
 }

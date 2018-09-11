@@ -1,8 +1,8 @@
-import {instance, mock} from "ts-mockito";
-import {AppState} from "./app.state";
-import {WebsocketService} from "@services/websocket/websocket.service";
-import {Actions} from "@ngrx/effects";
-import {WarriorsEffects} from "@effects/warriors/warriors.effects";
+import {instance, mock} from 'ts-mockito';
+import {AppState} from './app.state';
+import {WebsocketService} from '@services/websocket/websocket.service';
+import {Actions} from '@ngrx/effects';
+import {WarriorsEffects} from '@effects/warriors/warriors.effects';
 
 let effect: WarriorsEffects;
 let actions: Actions;

@@ -1,9 +1,8 @@
 import {NotificationListComponent} from './notification-list.component';
-import {LeaderboardComponent} from "../leaderboard/leaderboard.component";
-import {Store} from "@ngrx/store";
-import {AppState} from "../../app.state";
-import {anything, instance, mock, when} from "ts-mockito";
-import {Observable} from "rxjs";
+import {Store} from '@ngrx/store';
+import {AppState} from '../../app.state';
+import {anything, instance, mock, when} from 'ts-mockito';
+import {Observable} from 'rxjs';
 
 let component: NotificationListComponent;
 let store: Store<AppState>;
