@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AppState} from './app.state';
 import {WebsocketService} from '@services/websocket/websocket.service';
+import * as NotificationsActions from '@actions/notifications/notifications.actions';
 
 @Component({
   selector: 'app-root',
@@ -16,5 +17,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.websocketService.openConnection();
+    this.store.dispatch(new NotificationsActions.AddNotification({
+      type: 'warning',
+      message: 'Welcome to Deathmatch!'
+    }));
   }
 }

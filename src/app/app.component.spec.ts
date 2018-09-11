@@ -1,8 +1,9 @@
 import {AppComponent} from './app.component';
-import {instance, mock, verify} from "ts-mockito";
+import {deepEqual, instance, mock, verify} from "ts-mockito";
 import {Store} from "@ngrx/store";
 import {AppState} from "./app.state";
 import {WebsocketService} from "./services/websocket/websocket.service";
+import * as NotificationsActions from "./actions/notifications/notifications.actions";
 
 let component: AppComponent;
 let store: Store<AppState>;
@@ -25,6 +26,15 @@ describe('AppComponent', () => {
   it('should open the socket connection on init', () => {
     component.ngOnInit();
     verify(mockWebsocketService.openConnection()).called();
+  });
+
+  it('should dispatch a notification on init', () => {
+    const action = new NotificationsActions.AddNotification({
+      type: 'warning',
+      message: 'Welcome to Deathmatch!'
+    });
+    component.ngOnInit();
+    verify(mockStore.dispatch(deepEqual(action))).once();
   });
 
 });

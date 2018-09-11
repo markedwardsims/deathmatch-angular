@@ -1,4 +1,6 @@
 <div class="dm-notification-list dm-notification-list--fixed">
-  <app-notification></app-notification>
-  <app-notification></app-notification>
+  <app-notification *ngFor="let notification of notifications | async"
+    [type]="notification.type"
+    [message]="notification.message"
+  ></app-notification>
 </div>
