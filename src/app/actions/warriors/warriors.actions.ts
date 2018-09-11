@@ -1,9 +1,5 @@
-import {Action as NgrxAction} from '@ngrx/store';
 import {Warrior} from '@interfaces/warrior';
-
-export interface PayloadAction extends NgrxAction {
-  payload?: any;
-}
+import {PayloadAction} from '@interfaces/payload-action';
 
 export const SET_ALL_WARRIORS = '[WARRIORS] SetAllWarriors';
 export const SET_OPPONENTS =    '[WARRIORS] SetOpponents';

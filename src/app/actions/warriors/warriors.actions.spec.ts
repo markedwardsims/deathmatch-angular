@@ -1,13 +1,11 @@
-import * as WarriorsActions from '@actions/warriors.actions';
-import {SET_ALL_WARRIORS} from '@actions/warriors.actions';
-import {SELECT_OPPONENT, SET_OPPONENTS} from "./warriors.actions";
+import * as WarriorsActions from '@actions/warriors/warriors.actions';
 
-describe('AppComponent', () => {
+describe('Warrior Actions', () => {
 
   it('should create the SetAllWarriors action', () => {
     const mockWarriors = [];
     expect(new WarriorsActions.SetAllWarriors(mockWarriors)).toEqual({
-      type: SET_ALL_WARRIORS,
+      type: WarriorsActions.SET_ALL_WARRIORS,
       payload: mockWarriors
     });
   });
@@ -15,14 +13,14 @@ describe('AppComponent', () => {
   it('should create the SetOpponents action', () => {
     const mockWarriors = [];
     expect(new WarriorsActions.SetOpponents()).toEqual({
-      type: SET_OPPONENTS
+      type: WarriorsActions.SET_OPPONENTS
     });
   });
 
   it('should create the SelectOpponent action', () => {
     const mockId = 999;
     expect(new WarriorsActions.SelectOpponent(mockId)).toEqual({
-      type: SELECT_OPPONENT,
+      type: WarriorsActions.SELECT_OPPONENT,
       payload: mockId
     });
   });
