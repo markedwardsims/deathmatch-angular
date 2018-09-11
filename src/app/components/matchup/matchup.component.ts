@@ -3,7 +3,7 @@ import {Warrior} from '@interfaces/warrior';
 import {select, Store} from '@ngrx/store';
 import {AppState} from '../../app.state';
 import {Observable} from 'rxjs';
-import * as WarriorsActions from '@actions/warriors.actions';
+import * as WarriorsActions from '@actions/warriors/warriors.actions';
 
 @Component({
   selector: 'app-matchup',

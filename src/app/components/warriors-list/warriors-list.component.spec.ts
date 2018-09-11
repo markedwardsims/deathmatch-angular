@@ -1,8 +1,8 @@
 import {WarriorsListComponent} from './warriors-list.component';
-import {Store} from "@ngrx/store";
-import {AppState} from "../../app.state";
-import {anything, instance, mock, when} from "ts-mockito";
-import {Observable} from "rxjs";
+import {Store} from '@ngrx/store';
+import {AppState} from '../../app.state';
+import {anything, instance, mock, when} from 'ts-mockito';
+import {Observable} from 'rxjs';
 
 let component: WarriorsListComponent;
 let store: Store<AppState>;

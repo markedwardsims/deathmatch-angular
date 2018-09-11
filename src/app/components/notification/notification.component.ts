@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-notification',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
     '../../../../node_modules/deathmatch-components/dist/components/notification/notification.css'
   ]
 })
-export class NotificationComponent {}
+export class NotificationComponent {
+  @Input() type: string;
+  @Input() message: string;
+}
