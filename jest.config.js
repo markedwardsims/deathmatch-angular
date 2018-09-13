@@ -17,10 +17,15 @@ module.exports = {
     '@services/(.*)': '<rootDir>/src/app/services/$1',
     '@effects/(.*)': '<rootDir>/src/app/effects/$1'
   },
+  collectCoverageFrom: [
+    'src/app/**/*.ts',
+    '!src/app/app.module.ts',
+    '!src/jestGlobalMocks.ts'
+  ],
   coverageThreshold: {
     global: {
       statements: 80,
-      branches: 80,
+      branches: 75,
       lines: 80,
       functions: 80
     }
