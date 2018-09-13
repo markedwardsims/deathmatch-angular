@@ -3,7 +3,7 @@ import {deepEqual, instance, mock, resetCalls, verify} from 'ts-mockito';
 import {Store} from '@ngrx/store';
 import {AppState} from './app.state';
 import {WebsocketService} from './services/websocket/websocket.service';
-import * as NotificationsActions from './actions/notifications/notifications.actions';
+import * as NotificationsActions from '@actions/notifications/notifications.actions';
 
 let component: AppComponent;
 let store: Store<AppState>;

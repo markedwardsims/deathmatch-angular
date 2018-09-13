@@ -4,14 +4,13 @@ import {Warrior} from '@interfaces/warrior';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../app.state';
 import * as WarriorsActions from '@actions/warriors/warriors.actions';
+import * as NotificationsActions from '@actions/notifications/notifications.actions';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebsocketService {
   socket: Socket;
-
-  // TODO: add a connected prop?
 
   constructor(private store: Store<AppState>) { }
 
@@ -25,7 +24,10 @@ export class WebsocketService {
         this.store.dispatch(new WarriorsActions.SetAllWarriors(allWarriors));
       })
       .on('tooManyRequests', () => {
-        // TODO: show notification
+        this.store.dispatch(new NotificationsActions.AddNotification({
+          type: 'error',
+          message: 'No cheating!'
+        }));
       });
     return this.socket;
   }
