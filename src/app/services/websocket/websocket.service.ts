@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import io, {Socket} from 'socket.io-client';
 import {Warrior} from '@interfaces/warrior';
 import {Store} from '@ngrx/store';
@@ -12,24 +12,32 @@ import * as NotificationsActions from '@actions/notifications/notifications.acti
 export class WebsocketService {
   socket: Socket;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>, private ngZone: NgZone) { }
 
   openConnection(): Socket {
-    this.socket = io.connect('ws://:3000')
-      .on('init', (allWarriors: Warrior[]) => {
-        this.store.dispatch(new WarriorsActions.SetAllWarriors(allWarriors));
-        this.store.dispatch(new WarriorsActions.SetOpponents());
-      })
-      .on('allWarriorsData', (allWarriors: Warrior[]) => {
-        this.store.dispatch(new WarriorsActions.SetAllWarriors(allWarriors));
-      })
-      .on('tooManyRequests', () => {
-        this.store.dispatch(new NotificationsActions.AddNotification({
-          type: 'error',
-          message: 'No cheating!'
-        }));
-      });
-    return this.socket;
+    this.ngZone.runOutsideAngular(() => {
+      this.socket = io.connect('ws://:3000')
+        .on('init', (allWarriors: Warrior[]) => {
+          this.ngZone.run(() => {
+            this.store.dispatch(new WarriorsActions.SetAllWarriors(allWarriors));
+            this.store.dispatch(new WarriorsActions.SetOpponents());
+          });
+        })
+        .on('allWarriorsData', (allWarriors: Warrior[]) => {
+          this.ngZone.run(() => {
+            this.store.dispatch(new WarriorsActions.SetAllWarriors(allWarriors));
+          });
+        })
+        .on('tooManyRequests', () => {
+          this.ngZone.run(() => {
+            this.store.dispatch(new NotificationsActions.AddNotification({
+              type: 'error',
+              message: 'No cheating!'
+            }));
+          });
+        });
+      return this.socket;
+    });
   }
 
   emitWarriorSelection(id: number) {
