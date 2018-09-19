@@ -9,14 +9,23 @@ import * as WarriorsActions from '@actions/warriors/warriors.actions';
 let effect: WarriorsEffects;
 let actions: ReplaySubject<Action>;
 let websocketService: WebsocketService;
+let store: ReplaySubject<AppState>;
 
 const mockWebsocketService: WebsocketService = mock(WebsocketService);
 
+const mockState = {
+  warriors: {
+    opponent1: { id: 20 },
+    opponent2: { id: 30 }
+  }
+};
+
 describe('Warriors effects', () => {
   beforeEach(() => {
+    store = store = new ReplaySubject(1);
     actions = actions = new ReplaySubject(1);
     websocketService = instance(mockWebsocketService);
-    effect = new WarriorsEffects(actions, websocketService);
+    effect = new WarriorsEffects(actions, store, websocketService);
   });
 
   it('should create the effect', () => {
@@ -34,7 +43,9 @@ describe('Warriors effects', () => {
   });
 
   it('should set opponents', (done) => {
+    jest.spyOn(websocketService, 'emitWarriorSelection');
     actions.next(new WarriorsActions.SelectOpponent(99));
+    store.next(mockState);
     effect.selectOpponent$.subscribe(value => {
       const setOpponentsAction = new WarriorsActions.SetOpponents();
       expect(value).toEqual(setOpponentsAction);

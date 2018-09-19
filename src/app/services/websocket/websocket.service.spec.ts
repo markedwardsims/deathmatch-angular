@@ -2,9 +2,11 @@ import {WebsocketService} from './websocket.service';
 import {instance, mock, resetCalls} from 'ts-mockito';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../app.state';
+import {NgZone} from '@angular/core';
 
 let service: WebsocketService;
 let store: Store<AppState>;
+let ngZone: NgZone;
 let serverSocket: any;
 
 const mockStore: Store<AppState> = mock(Store);
@@ -48,16 +50,14 @@ jest.mock('socket.io-client', () => {
 describe('WebsocketService', () => {
   beforeEach(() => {
     store = instance(mockStore);
-    service = new WebsocketService(store);
+    ngZone = {} as NgZone;
+    service = new WebsocketService(store, ngZone);
+    ngZone.runOutsideAngular = callback => callback.apply(service);
+    ngZone.run = callback => callback.apply(service);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
-  });
-
-  it('should open a connection', () => {
-    const socket = service.openConnection();
-    expect(service.socket).toEqual(socket);
   });
 
   it('should dispatch a SetAllWarriors action on init', () => {
