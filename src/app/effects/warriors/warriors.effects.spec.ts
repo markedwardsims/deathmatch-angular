@@ -1,4 +1,4 @@
-import {instance, mock, resetCalls, verify} from 'ts-mockito';
+import {instance, mock, resetCalls} from 'ts-mockito';
 import {AppState} from './app.state';
 import {WebsocketService} from '@services/websocket/websocket.service';
 import {WarriorsEffects} from '@effects/warriors/warriors.effects';
@@ -24,9 +24,11 @@ describe('Warriors effects', () => {
   });
 
   it('should emit the selection with the websocket service', (done) => {
+    jest.spyOn(websocketService, 'emitWarriorSelection');
     actions.next(new WarriorsActions.SelectOpponent(99));
+    store.next(mockState);
     effect.selectOpponent$.subscribe(value => {
-      verify(mockWebsocketService.emitWarriorSelection(99)).once();
+      expect(websocketService.emitWarriorSelection).toHaveBeenCalledWith(99);
       done();
     });
   });

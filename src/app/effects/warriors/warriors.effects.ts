@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable} from 'rxjs';
-import {Action} from '@ngrx/store';
-import {map, mapTo, tap} from 'rxjs/operators';
+import {Action, Store} from '@ngrx/store';
+import {map, mapTo, tap, withLatestFrom} from 'rxjs/operators';
 import {WebsocketService} from '@services/websocket/websocket.service';
 import * as WarriorsActions from '@actions/warriors/warriors.actions';
 import {PayloadAction} from '@interfaces/payload-action';
+import {AppState} from '../../app.state';
 
 @Injectable()
 export class WarriorsEffects {
