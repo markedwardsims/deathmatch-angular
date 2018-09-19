@@ -5,13 +5,13 @@
     *ngIf="opponent1 | async; let warrior"
     class="matchup__warrior-detail"
     [warrior]="opponent1 | async"
-    (click)="selectOpponent(warrior.id)">
+    (click)="selectOpponent(warrior)">
   </app-warrior-detail>
   <h3 class="dm-title dm-title--large dm-title--yellow dm-title--italic matchup__title matchup__title--third">vs</h3>
   <app-warrior-detail
     *ngIf="opponent2 | async; let warrior"
     class="matchup__warrior-detail"
     [warrior]="opponent2 | async"
-    (click)="selectOpponent(warrior.id)">
+    (click)="selectOpponent(warrior)">
   </app-warrior-detail>
 </div>

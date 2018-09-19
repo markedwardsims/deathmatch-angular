@@ -16,7 +16,7 @@ export class SetOpponents implements PayloadAction {
 
 export class SelectOpponent implements PayloadAction {
   readonly type = SELECT_OPPONENT;
-  constructor(public payload: number) {}
+  constructor(public payload: Warrior) {}
 }
 
 export type Actions = SetAllWarriors | SetOpponents | SelectOpponent;

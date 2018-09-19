@@ -34,7 +34,7 @@ describe('Warriors effects', () => {
 
   it('should emit the selection with the websocket service', (done) => {
     jest.spyOn(websocketService, 'emitWarriorSelection');
-    actions.next(new WarriorsActions.SelectOpponent(99));
+    actions.next(new WarriorsActions.SelectOpponent({id: 99}));
     store.next(mockState);
     effect.selectOpponent$.subscribe(value => {
       expect(websocketService.emitWarriorSelection).toHaveBeenCalledWith(99);
@@ -44,7 +44,7 @@ describe('Warriors effects', () => {
 
   it('should set opponents', (done) => {
     jest.spyOn(websocketService, 'emitWarriorSelection');
-    actions.next(new WarriorsActions.SelectOpponent(99));
+    actions.next(new WarriorsActions.SelectOpponent({id: 99}));
     store.next(mockState);
     effect.selectOpponent$.subscribe(value => {
       const setOpponentsAction = new WarriorsActions.SetOpponents();

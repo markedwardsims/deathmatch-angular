@@ -26,7 +26,7 @@ export class WarriorsEffects {
         };
       }),
       tap(payload => {
-        this.websocketService.emitWarriorSelection(payload.selection)
+        this.websocketService.emitWarriorSelection(payload.selection.id)
       }),
       mapTo(new WarriorsActions.SetOpponents())
     );

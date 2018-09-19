@@ -13,7 +13,7 @@
     "test:ci": "jest --runInBand",
     "test:coverage": "jest --coverage",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "concurrently 'node server.js' 'ng e2e'"
   },
   "private": true,
   "dependencies": {

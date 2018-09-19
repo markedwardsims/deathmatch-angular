@@ -23,8 +23,8 @@ export class MatchupComponent implements OnInit {
     this.opponent2 = this.store.pipe(select((state: any) => state.warriors.opponent2));
   }
 
-  selectOpponent(id: number) {
-    this.store.dispatch(new WarriorsActions.SelectOpponent(id));
+  selectOpponent(selection: Warrior) {
+    this.store.dispatch(new WarriorsActions.SelectOpponent(selection));
   }
 
 }
