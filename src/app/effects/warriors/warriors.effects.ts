@@ -11,13 +11,13 @@ import {AppState} from '../../app.state';
 @Injectable()
 export class WarriorsEffects {
 
-  constructor(private actions$: Actions, private store$: Store<AppState>, private websocketService: WebsocketService) {}
+  constructor(private actions$: Actions, private store: Store<AppState>, private websocketService: WebsocketService) {}
 
   @Effect()
   selectOpponent$: Observable<Action> =
     this.actions$.pipe(
       ofType(WarriorsActions.SELECT_OPPONENT),
-      withLatestFrom(this.store$),
+      withLatestFrom(this.store),
       map(([action, state]: ([PayloadAction, AppState])) => {
         return {
           selection: action.payload,
