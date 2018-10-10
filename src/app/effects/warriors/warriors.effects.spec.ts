@@ -22,8 +22,8 @@ const mockState = {
 
 describe('Warriors effects', () => {
   beforeEach(() => {
-    store = store = new ReplaySubject(1);
-    actions = actions = new ReplaySubject(1);
+    store = new ReplaySubject(1);
+    actions = new ReplaySubject(1);
     websocketService = instance(mockWebsocketService);
     effect = new WarriorsEffects(actions, store, websocketService);
   });
